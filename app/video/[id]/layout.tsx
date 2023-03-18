@@ -4,7 +4,7 @@ import supabase from '../../../utils/supabase';
 import '../../globals.css';
 import styles from '../page.module.css';
 
-export async function getData() {
+export async function Layout() {
   const { data: tutorial } = await supabase.from("tutorial")
   .select("*")
     
@@ -34,7 +34,7 @@ export default async function ModulesLayout({
 }: {
   children: React.ReactNode,
 }) {
-  const data = await getData();
+  const data = await Layout();
   return (
     
   <div className={styles.sidebar}>
