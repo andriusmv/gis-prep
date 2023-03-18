@@ -269,3 +269,53 @@
     transform: rotate(0deg);
   }
 }
+.avatar {
+  vertical-align: middle;
+  width: max-content;
+  height: max-content;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  margin: 1rem;
+}
+
+.loading {
+  padding: 1rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+  width: max-content;
+  height: max-content;
+  border-radius: 0px;
+  border-color: none;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  margin: auto;
+}
+
+.video-container iframe {
+  border: none;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
