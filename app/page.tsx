@@ -6,8 +6,8 @@ import supabase from '@/utils/supabase'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default async function Home() {
-  const { data: video } = await supabase.from("video").select();
+export default async function Video() {
+  const { data: video } = await supabase.from("video").select("*");
 
   if (!video) {
     return <p>No posts found.</p>;
