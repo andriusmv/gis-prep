@@ -2,7 +2,7 @@ import supabase from '../../../utils/supabase';
 import { notFound } from 'next/navigation';
 import Link from "next/link";
 import React from "react";
-import styles from '../page.module.css';
+import styles from '../../page.module.css';
 
 export default async function Esri2101() {
   const { data: video } = await supabase.from("video").select().or('tag.cs.{ESRI2101}');
