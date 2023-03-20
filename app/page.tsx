@@ -7,9 +7,9 @@ import supabase from '@/utils/supabase'
 const inter = Inter({ subsets: ['latin'] })
 
 export default async function Video() {
-  const { data: video } = await supabase.from("video").select("*");
-
-  if (!video) {
+  const { data: exam } = await supabase.from("exam").select()
+  // .or('tag.cs.{GISCI}');
+  if (!exam) {
     return <p>No posts found.</p>;
   }
 
@@ -35,11 +35,11 @@ export default async function Video() {
         </div>
         <br/>
         <div className={styles.grid}>
-        {video.map((video) => (
-    <Link key={video.id} href={`/video/${video.id}`} className={styles.card}>
-      <h2>{video.title}</h2>
-      <p>{video.subtitle}</p>
-      <p>{video.duration}</p>
+        {exam.map((exam) => (
+    <Link key={exam.id} href={`/video/${exam.id}`} className={styles.card}>
+      <h2>{exam.title}</h2>
+      <p>{exam.subtitle}</p>
+      <p>{exam.tag}</p>
     </Link>))}
           
         </div>

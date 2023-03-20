@@ -3,37 +3,36 @@ import { notFound } from 'next/navigation';
 import Link from "next/link";
 import React from "react";
 import styles from '../page.module.css';
-import Player from '../../player';
 
 export async function generateStaticParams() {
-    const { data: module } = await supabase.from("module").select("id");
+    const { data: video } = await supabase.from("video").select("id");
 
-    return module?.map(({ id }) => ({
+    return video?.map(({ id }) => ({
       id,
     }));
   }
   
-  export default async function Tutorial({
+  export default async function VideoPage({
     params: { id },
   }: {
     params: { id: string };
   }) {
-    const { data: module } = await supabase
-      .from("tutorial")
+    const { data: video } = await supabase
+      .from("video")
       .select()
       .match({ id })
       .select();
   
-    if (!module) {
+    if (!video) {
       notFound();
     }
   
     return (
   <>
-  {module.map((tutorial) => (
-  <div key={tutorial.id} className={styles.videocontainer}>
+  {video.map((video) => (
+  <div key={video.id} className={styles.videocontainer}>
     
-    <iframe className={styles.video} src={`https://www.youtube.com/embed/${tutorial.embed}`} frameBorder={0} allowFullScreen/>
+    <iframe className={styles.video} src={`https://www.youtube.com/embed/${video.id}`} frameBorder={0} allowFullScreen/>
     
     </div>
         ))}

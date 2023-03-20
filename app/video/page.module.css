@@ -211,7 +211,7 @@
 .sidebar__main {
   /* Take the remaining width */
   flex: 1;
-  background-color: #000000;
+  background-color: #ffffff;
 
   /* Make it scrollable */
   overflow: auto;

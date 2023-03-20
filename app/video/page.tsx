@@ -2,7 +2,7 @@ import supabase from "@/utils/supabase";
 import Link from "next/link";
 import styles from './page.module.css'
 
-export default async function Videos() {
+export default async function VideoIndex() {
   const { data: video } = await supabase.from("video").select("*");
 
   if (!video) {
